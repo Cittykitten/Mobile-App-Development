@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TPERS-Team members</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+
+    
+    :root {
+      --primary: #ff0073;
+      --bg: #0a0a0a;
+      --text: #fff;
+      --subtle: #aaa;
+      --light-pink: #ff72c0;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif, sans-serif;
+    }
+    
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    
+    .pink{
+        color: var(--primary);
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #111111;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      animation: fadeDown 0.6s ease-in-out;
+    }
+    
+    @keyframes fadeDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .logo {
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+    
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+    
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      position: relative;
+      transition: color 0.3s;
+    }
+    
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      bottom: -4px;
+      left: 0;
+      transition: 0.3s;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .hamburger div {
+      background: var(--text);
+      height: 3px;
+      width: 25px;
+      margin: 3px 0;
+    }
+
+    .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+    
+    
+    .page1 h1{
+            text-align: center;
+            margin-top: 30px;
+            font-size: 50px;
+        }
+    
+        .cardContainer{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 0px;
+        }
+        
+        .card{
+            /* height: 700px; */
+            width: 200px;
+            background: transparent;
+            border-radius: 8px;
+            overflow: hidden;
+            /* box-shadow: 0 2px 4px rgba(0,0,0,0.2); */
+            margin: 20px;
+        }
+            
+        .card img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            object-fit: cover;
+        }
+        
+        .cardContent{
+            padding: 1px;
+        }
+        
+        .cardContent h3{
+            font-size: 28px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        
+        .cardContent p{
+            color: var(--light-pink);
+            font-size: 15px;
+            line-height: 1.3;
+            text-align: center;
+        }
+    
+        .footer {
+      background-color: var(--bg);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    
+    .footer-about {
+      flex: 1 1 250px;
+    }
+    
+    .footer-about img.footer-logo {
+      width: 140px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-about p {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+    
+    .footer-socials a{
+      margin-right: 10px;
+      font-size: 1.2rem;
+      color: #cccccc;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-socials a:hover {
+      color: var(--primary);
+    }
+    
+    .footer-links {
+      flex: 1 1 200px;
+    }
+    
+    .footer-links h4 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    
+    @media screen and (max-width: 768px) {
+      .footer-links h4 {
+        align-items: center;
+        justify-content: center;
+    }
+    }
+    
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links ul li a {
+      color:#cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links ul li a:hover {
+      color: var(--text);
+    }
+    
+    .footer-subscribe {
+      flex: 1 1 250px;
+    }
+    
+    .footer-subscribe h4 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+      text-align: center;
+    }
+    
+    .footer-subscribe p {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      color: var(--text);
+      text-align: center;
+    }
+    
+    .footer-subscribe input {
+      padding: 10px;
+      width: 70%;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+    
+    .footer-subscribe button {
+      padding: 10px;
+      background: var(--primary);
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 0 4px 4px 0;
+      transition: 0.3s ease;
+    }
+    
+    .footer-subscribe button:hover {
+      background: var(--light-pink);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #ff0073;
+      padding-top: 20px;
+      margin-top: 30px;
+      text-align: center;
+    }
+    
+    .footer-bottom p {
+      color: var(--subtle);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    
+    .footer-bottom a {
+      color: var(--primary);
+      text-decoration: none;
+      text-align: center;
+    }
+    
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .footer-socials a {
+      color: #cccccc;
+      font-size: 18px;
+      transition: transform 0.3s ease, color 0.3s ease;
+      text-align: center;
+    }
+    
+    .footer-socials a:hover {
+      color: var(--primary);
+      transform: translateY(-4px);
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .footer-socials {
+        flex-wrap: wrap;
+      }
+    }
+    
+    
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .footer-subscribe input {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+    
+      .footer-subscribe button {
+        width: 100%;
+        border-radius: 4px;
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+        box-shadow: 0 0 0px rgb(255, 0, 111);
+      }
+      to {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 0, 111);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+    
+      .hamburger {
+        display: block;
+      }
+    
+      .mobile-nav.show {
+        display: flex;
+      }
+    
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+    
+    
+      </style>
+</head>
+<body>
+  <header>
+    <div class="logo">TPERS</div>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html"><span class="pink">About Us</span></a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+
+  
+
+
+
+  <section class="page1">
+    <h1>Meet the Team</h1>
+  
+  
+    <div class="cardContainer">
+  
+  
+        <div class="card">
+            <img src="madimages/WhatsApp Image 2025-04-25 at 9.22.57 AM.jpeg" alt="Image of Team member [Emmanuella Tegah]">
+                <div class="cardContent">
+                    <h3>Ella Tegah</h3>
+                    <p>Full Stack website developer</p>
+                         <!-- <a href="#" class="readMore">Read more</a> -->
+                
+                </div>
+        </div>
+  
+        <div class="card">
+            <img src="madimages/john.jpg" alt="Image of Team member [John Fofie]">
+                <div class="cardContent">
+                    <h3>John Junior</h3>
+                    <p>Chief web developer</p>
+                         <!-- <a href="#" class="readMore">Read more</a> -->
+                
+                </div>
+        </div>
+  
+        <div class="card">
+            <img src="madimages/mustapha.jpg" alt="Image of Team member [Mustapha Salisu]">
+                <div class="cardContent">
+                    <h3>Kooliman</h3>
+                    <p>Managing Director</p>
+                         <!-- <a href="#" class="readMore">Read more</a> -->
+                
+                </div>
+        </div>
+  
+        <div class="card">
+            <img src="madimages/kuleke.jpg" alt="Image of Team member [Lekeman]">
+                <div class="cardContent">
+                    <h3>Lekeman</h3>
+                    <p>Sales Manager</p>
+                         <!-- <a href="#" class="readMore">Read more</a> -->
+                
+                </div>
+        </div>
+  
+        <div class="card">
+            <img src="madimages/selase.jpg" alt="Image of Team member [Selase]">
+                <div class="cardContent">
+                    <h3>Selase</h3>
+                    <p>Content Director</p>
+                         <!-- <a href="#" class="readMore">Read more</a> -->
+                
+                </div>
+        </div>
+  
+        <div class="card">
+            <img src="madimages/Morrison.jpg" alt="Image of Team member [Moreman]">
+                <div class="cardContent">
+                    <h3>Moreman</h3>
+                    <p>Accountant</p>
+                         <!-- <a href="#" class="readMore">Read more</a> -->
+                
+                </div>
+        </div>
+
+        <div class="card">
+          <img src="madimages/gifty.jpg" alt="Image of Team member [Wilson Owusu]">
+              <div class="cardContent">
+                  <h3>Afia Sam</h3>
+                  <p>Accountant</p>
+                       <!-- <a href="#" class="readMore">Read more</a> -->
+              
+              </div>
+      </div>
+
+      <div class="card">
+        <img src="madimages/osuka.jpg" alt="Image of Team member [Eggman]">
+            <div class="cardContent">
+                <h3>Eggman</h3>
+                <p>Accountant</p>
+                     <!-- <a href="#" class="readMore">Read more</a> -->
+            
+            </div>
+    </div>
+
+    <div class="card">
+      <img src="madimages/Teea2.jpg" alt="Image of Team member [Wilson Owusu]">
+          <div class="cardContent">
+              <h3>Wilson Owusu</h3>
+              <p>Accountant</p>
+                   <!-- <a href="#" class="readMore">Read more</a> -->
+          
+          </div>
+  </div>
+
+  <div class="card">
+    <img src="madimages/WhatsApp Image 2025-04-25 at 9.22.57 AM.jpeg" alt="Image of Team member [Tegah_Tiana]">
+        <div class="cardContent">
+            <h3>Tegah Tiana</h3>
+            <p>Accountant</p>
+                 <!-- <a href="#" class="readMore">Read more</a> -->
+        
+        </div>
+</div>
+  
+    </div>
+  
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="footer-container reveal">
+      <div class="footer-about">
+        <img src="madimages/purple-yeti-cartoon-sitting-chair.jpg" alt="Company profile or logo" class="footer-logo" />
+        <p>TPERS: Establish online Presence</p>
+        <div class="footer-socials">
+          <a href="tiktok.com/@cittykitten"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@cittykat000?si=qQmDfcKMRpAdZRDo"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Web development</a></li>
+          <li><a href="services.html">UI/UX</a></li>
+          <li><a href="services.html">SEO</a></li>
+          <li><a href="services.html">Domain Registration</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quicklinks</h4>
+        <ul>
+          <li><a href="Team.html"><span style="color: #ffa0cb;">Our Team</span></a></li>
+          <li><a href="https://www.nobledesktop.com/classes-near-me/blog/web-development-career-paths#:~:text=Web%20development%20offers%20several%20career,%2C%20Ruby%20Developer%2C%20and%20more.">Careers</a></li>
+          <li><a href="https://www.webdesignireland.ie/website-design-development-terms">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-subscribe">
+        <h4>Subscribe</h4>
+        <p>Get the latest updates and offers straight to your inbox.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 All rights reserved | <a href="#"><span class="pink">Tegah Tiana</span></a></p>
+      <div class="footer-socials">
+        <a href="https://m.facebook.com/profile.php?id=61573284841448&name=xhp_nt_fbaction_open_user"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/Tegah_Tiana"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/tegah_tiana/"><i class="fab fa-instagram"></i></a>
+        <a href="linkedin.com/in/tiana-tegah-39b887338"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".reveal").forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const trigger = window.innerHeight * 0.85;
+
+    if (top < trigger) {
+      el.classList.add("active");
+    }
+  });
+});      
+  window.addEventListener("scroll", revealCards);
+  
+  function revealCards() {
+    const cards = document.querySelectorAll(".reveal");
+    const triggerBottom = window.innerHeight * 0.85;
+  
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < triggerBottom) {
+        card.classList.add("active");
+      }
+    });
+  }
+  
+
+  revealCards();
+  
+function toggleMenu() {
+  document.getElementById('nav').classList.toggle('active');
+}
+</script>
+
+
+
+
+</body>
+</html>
